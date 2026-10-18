@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT System - Smart Fridge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>IoT System</h1>
+        <p>How the Smart Fridge works</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="system.html">IoT System</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>System Components</h2>
+            <ul>
+                <li><strong>Intel Galileo:</strong> Processes sensor readings.</li>
+                <li><strong>Magnetic Reed Switch:</strong> Detects if the door is open or closed.</li>
+                <li><strong>DS18B20 Sensor:</strong> Measures the temperature.</li>
+                <li><strong>Buzzer:</strong> Gives a local warning.</li>
+                <li><strong>Telegram Bot:</strong> Sends alerts to the user.</li>
+                <li><strong>Web Dashboard:</strong> Displays the system status.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>System Diagram</h2>
+            <img src="media/architecture.png" width="100%" alt="Smart Fridge IoT System Architecture">
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <ol>
+                <li>The sensors read the door status and temperature.</li>
+                <li>Intel Galileo checks the readings.</li>
+                <li>If a problem is detected, the buzzer gives a warning.</li>
+                <li>A Telegram message can be sent to the user.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Dashboard</h2>
+
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Door</td>
+                    <td>Open</td>
+                </tr>
+                <tr>
+                    <td>Temperature</td>
+                    <td>8 °C</td>
+                </tr>
+                <tr>
+                    <td>Alarm</td>
+                    <td>ON</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Alarm Control</h2>
+            <p>
+                Select a command to demonstrate the alarm control form.
+                This form does not control the real hardware.
+            </p>
+
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Alarm Command</legend>
+                    <input
+                        type="submit"
+                        value="Turn Alarm OFF"
+                        class="submitBTN off-btn">
+                </fieldset>
+            </form>
+
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Control The System</legend>
+                    <input
+                        type="submit"
+                        value="Turn The System ON"
+                        class="submitBTN on-btn">
+
+                    <input
+                        type="submit"
+                        value="Turn The System OFF"
+                        class="submitBTN off-btn">
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Smart Fridge Project, Copyrights Reserved &copy;</p>
+    </footer>
+
+</body>
+</html>
