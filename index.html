@@ -2,82 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Smart Fridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Fridge | Home</title>
+    <!-- Bootstrap CSS (installed with npm) -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Our custom styles come after Bootstrap so they can customize it -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Smart Fridge</h1>
-        <p>An IoT-Based Refrigerator Monitoring System</p>
+    <header class="site-header text-center text-white">
+        <div class="container py-5">
+
+            <a href="#" class="navbar-brand">
+                <img src="media/logo.png"
+                    class="logo-img rounded-circle"
+                    alt="Smart Fridge Logo">
+            </a>
+
+            <h1 class="display-4 fw-bold">Smart Fridge</h1>
+            <p class="lead mb-0">An IoT-Based Refrigerator Monitoring System</p>
+        </div>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="system.html">IoT System</a>
-        <a href="contact.html">Contact</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top shadow-sm" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Smart Fridge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="system.html">IoT System</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <main>
-        <section>
-            <h2>Introduction</h2>
-            <p>
-                Smart Fridge is an IoT project that monitors the refrigerator
-                door and internal temperature. It helps users know when the
-                door is left open or the temperature becomes too high.
-            </p>
-        </section>
-
-        <section>
-            <h2>Problem Statement</h2>
-            <p>
-                Sometimes, users forget to close the refrigerator door.
-                This can waste electricity and increase the temperature
-                inside the refrigerator.
-            </p>
-        </section>
-
-        <section>
-            <h2>Project Objectives</h2>
-            <ul>
-                <li>Monitor the refrigerator door.</li>
-                <li>Measure the internal temperature.</li>
-                <li>Give an alarm when a problem occurs.</li>
-                <li>Send alerts to the user using Telegram.</li>
-                <li>Display the system status on a web page.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Proposed Solution</h2>
-            <p>
-                The system uses sensors connected to an Intel Galileo board.
-                The board checks the sensor readings and activates a buzzer
-                when the door stays open for too long or the temperature
-                exceeds the allowed limit.
-            </p>
-        </section>
-
-        <section>
-            <h2>Benefits</h2>
-            <ul>
-                <li>Reduce electricity waste.</li>
-                <li>Keep the refrigerator temperature under control.</li>
-                <li>Notify users about possible problems.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Intended Users</h2>
-            <p>
-                This project can be useful for families, homes, and small
-                businesses that use refrigerators.
-            </p>
-        </section>
+    <main class="container py-4 py-md-5">
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+                <section class="content-card h-100">
+                    <h2>Introduction</h2>
+                    <p>Smart Fridge is an IoT project that monitors the refrigerator door and internal temperature. It helps users know when the door is left open or the temperature becomes too high.</p>
+                </section>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <section class="content-card h-100">
+                    <h2>Problem Statement</h2>
+                    <p>Sometimes, users forget to close the refrigerator door. This can waste electricity and increase the temperature inside the refrigerator.</p>
+                </section>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <section class="content-card h-100">
+                    <h2>Project Objectives</h2>
+                    <ul>
+                        <li>Monitor the refrigerator door.</li>
+                        <li>Measure the internal temperature.</li>
+                        <li>Give an alarm when a problem occurs.</li>
+                        <li>Send alerts to the user using Telegram.</li>
+                        <li>Display the system status on a web page.</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <section class="content-card h-100">
+                    <h2>Proposed Solution</h2>
+                    <p>The system uses sensors connected to an Intel Galileo board. The board checks the sensor readings and activates a buzzer when the door stays open for too long or the temperature exceeds the allowed limit.</p>
+                </section>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <section class="content-card h-100">
+                    <h2>Benefits</h2>
+                    <ul>
+                        <li>Reduce electricity waste.</li>
+                        <li>Keep the refrigerator temperature under control.</li>
+                        <li>Notify users about possible problems.</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <section class="content-card h-100">
+                    <h2>Intended Users</h2>
+                    <p>This project can be useful for families, homes, and small businesses that use refrigerators.</p>
+                </section>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>Smart Fridge Project, Copyrights Reserved &copy;</p>
+    <footer class="site-footer text-center py-4">
+        <div class="container"><p class="mb-0">Smart Fridge Project, Copyrights Reserved &copy;</p></div>
     </footer>
 
+    <!-- Bootstrap JavaScript enables the mobile navbar toggler -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

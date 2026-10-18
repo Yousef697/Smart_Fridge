@@ -1,427 +1,166 @@
-/* ========================================
-   SMART FRIDGE - MAIN STYLESHEET
-   ======================================== */
-
-/* 1. Global Styles */
+/* Smart Fridge custom theme. Bootstrap provides the grid and UI components. */
 :root {
-    --primary: #0f2744;
-    --primary-light: #193b5c;
-    --accent: #14b8a6;
-    --accent-hover: #0d9488;
-    --background: #f3f6fa;
-    --surface: #ffffff;
-    --text: #263445;
-    --text-muted: #64748b;
-    --border: #dce4ed;
-    --shadow: 0 6px 24px rgba(15, 39, 68, 0.08);
-    --radius: 12px;
+    --fridge-primary: #0f2744;
+    --fridge-primary-light: #193b5c;
+    --fridge-accent: #14b8a6;
+    --fridge-accent-hover: #0d9488;
+    --fridge-background: #f3f6fa;
+    --fridge-text: #263445;
+    --fridge-muted: #64748b;
+    --fridge-border: #dce4ed;
+    --fridge-shadow: 0 6px 24px rgba(15, 39, 68, 0.08);
+    --fridge-radius: 12px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: var(--background);
-    color: var(--text);
+    background: var(--fridge-background);
+    color: var(--fridge-text);
     line-height: 1.7;
     min-height: 100vh;
 }
 
-/* 2. Header */
-header {
-    background: linear-gradient(
-        135deg,
-        var(--primary),
-        var(--primary-light)
-    );
-    color: white;
-    text-align: center;
-    padding: 55px 20px 45px;
-    border-bottom: 5px solid var(--accent);
+.site-header {
+    background: linear-gradient(135deg, var(--fridge-primary), var(--fridge-primary-light));
+    border-bottom: 5px solid var(--fridge-accent);
 }
 
-header h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 750;
-    letter-spacing: -1px;
-    margin-bottom: 8px;
+.site-header h1 { letter-spacing: -1px; }
+.site-header .lead { color: #cbd9e8; }
+
+.navbar.bg-primary {
+    background-color: var(--fridge-primary) !important;
 }
 
-header p {
-    color: #cbd9e8;
-    font-size: 1.08rem;
-}
-
-/* 3. Navigation */
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 14px 20px;
-    background-color: var(--surface);
-    box-shadow: 0 3px 12px rgba(15, 39, 68, 0.06);
-    border-bottom: 1px solid var(--border);
-}
-
-nav a {
-    display: inline-block;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 9px 20px;
+.navbar .nav-link {
     border-radius: 8px;
-    transition: background-color 0.2s ease,
-                color 0.2s ease,
-                transform 0.2s ease;
+    margin: 0 3px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    transition: background-color .2s ease, color .2s ease;
 }
 
-nav a:hover {
-    background-color: var(--accent);
-    color: white;
-    transform: translateY(-2px);
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background-color: var(--fridge-accent);
+    color: #fff;
 }
 
-/* 4. Main Content */
-main {
-    width: min(1100px, 92%);
-    margin: 40px auto;
+.content-card {
+    background: #fff;
+    padding: 26px 28px;
+    border: 1px solid var(--fridge-border);
+    border-radius: var(--fridge-radius);
+    box-shadow: var(--fridge-shadow);
+    transition: box-shadow .25s ease, transform .25s ease;
 }
 
-section {
-    background-color: var(--surface);
-    padding: 28px 32px;
-    margin-bottom: 25px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: box-shadow 0.25s ease;
+.content-card:hover {
+    box-shadow: 0 10px 30px rgba(15, 39, 68, .12);
 }
 
-section:hover {
-    box-shadow: 0 10px 30px rgba(15, 39, 68, 0.12);
-}
-
-section h2 {
-    color: var(--primary);
-    font-size: 1.45rem;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--border);
+.content-card h2 {
+    color: var(--fridge-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: .65rem;
+    border-bottom: 2px solid var(--fridge-border);
     position: relative;
 }
 
-section h2::after {
+.content-card h2::after {
     content: "";
     position: absolute;
     bottom: -2px;
     left: 0;
     width: 65px;
     height: 2px;
-    background-color: var(--accent);
+    background: var(--fridge-accent);
 }
 
-section p {
-    margin-bottom: 12px;
-}
+.content-card p:last-child { margin-bottom: 0; }
+.content-card li { margin-bottom: .45rem; }
+.content-card li::marker { color: var(--fridge-accent); }
+.content-card a { color: var(--fridge-accent-hover); }
+.content-card a:hover { color: var(--fridge-primary); }
 
-section p:last-child {
-    margin-bottom: 0;
-}
-
-/* 5. Lists */
-ul,
-ol {
-    padding-left: 25px;
-}
-
-li {
-    padding-left: 5px;
-    margin-bottom: 9px;
-}
-
-li::marker {
-    color: var(--accent);
-}
-
-li:last-child {
-    margin-bottom: 0;
-}
-
-strong {
-    color: var(--primary);
-}
-
-/* 6. Links */
-a {
-    color: var(--accent-hover);
-    transition: color 0.2s ease;
-}
-
-section a:hover {
-    color: var(--primary);
-}
-
-/* 7. Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 15px 0 5px;
-    overflow: hidden;
-    border-radius: 8px;
-    font-size: 0.95rem;
-}
-
-th,
-td {
-    padding: 14px 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-}
-
-th {
-    background-color: var(--primary);
-    color: white;
-    font-weight: 600;
-}
-
-td {
-    background-color: white;
-    overflow-wrap: anywhere;
-}
-
-tbody tr:nth-child(even),
-table tr:nth-child(even) {
-    background-color: #f6f9fc;
-}
-
-table tr:nth-child(even) td {
-    background-color: #f6f9fc;
-}
-
-table tr:hover td {
-    background-color: #eaf8f6;
-}
-
-table tr:last-child td {
-    border-bottom: none;
-}
-
-/* 8. System Diagram and Images */
-section img {
+.content-card img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 20px auto 5px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
+    margin: 1rem auto .25rem;
+    border: 1px solid var(--fridge-border);
 }
 
-/* 9. Forms and Alarm Controls */
-form {
-    margin-top: 18px;
-}
-
-fieldset {
-    border: 1px solid var(--border);
+.control-panel {
+    border: 1px solid var(--fridge-border);
     border-radius: 10px;
-    padding: 22px;
-    background-color: #f8fafc;
+    padding: 1.25rem;
+    background: #f8fafc;
 }
 
-legend {
-    color: var(--primary);
+.control-panel legend {
+    float: none;
+    width: auto;
+    padding: 0 .5rem;
+    color: var(--fridge-primary);
+    font-size: 1rem;
     font-weight: 700;
-    padding: 0 10px;
 }
 
-button {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease,
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-}
+.btn { font-weight: 600; }
+.btn-success { --bs-btn-bg: #15803d; --bs-btn-border-color: #15803d; }
+.btn-danger { --bs-btn-bg: #dc2626; --bs-btn-border-color: #dc2626; }
+.btn-success:hover { --bs-btn-bg: #166534; --bs-btn-border-color: #166534; }
+.btn-danger:hover { --bs-btn-bg: #b91c1c; --bs-btn-border-color: #b91c1c; }
 
-button:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 14px rgba(20, 184, 166, 0.25);
-}
-
-button:focus-visible,
-nav a:focus-visible,
-a:focus-visible {
-    outline: 3px solid #f59e0b;
-    outline-offset: 3px;
-}
-
-/* 10. Footer */
-footer {
-    background-color: var(--primary);
+.site-footer {
+    margin-top: 1.5rem;
+    background: var(--fridge-primary);
     color: #cbd9e8;
-    text-align: center;
-    padding: 24px 20px;
-    margin-top: 50px;
-    border-top: 4px solid var(--accent);
+    border-top: 4px solid var(--fridge-accent);
 }
 
-footer p {
-    font-size: 0.9rem;
-}
-
-/* 11. Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 40px 16px 32px;
-    }
-
-    main {
-        width: 94%;
-        margin: 25px auto;
-    }
-
-    section {
-        padding: 22px 20px;
-        margin-bottom: 18px;
-    }
-
-    section h2 {
-        font-size: 1.3rem;
-    }
-
-    nav {
-        gap: 5px;
-        padding: 10px;
-    }
-
-    nav a {
-        padding: 9px 13px;
-    }
-
-    table {
-        font-size: 0.85rem;
-    }
-
-    th,
-    td {
-        padding: 10px 9px;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        letter-spacing: 0;
-    }
-
-    header p {
-        font-size: 0.95rem;
-    }
-
-    nav {
-        gap: 3px;
-    }
-
-    nav a {
-        padding: 8px 10px;
-        font-size: 0.9rem;
-    }
-
-    section {
-        padding: 18px 15px;
-    }
-
-    /* Allow wide tables to scroll on small screens */
-    section {
-        overflow-wrap: break-word;
-    }
-
-    table {
-        font-size: 0.78rem;
-    }
-
-    th,
-    td {
-        padding: 9px 6px;
-    }
-
-    fieldset {
-        padding: 16px 12px;
-    }
-
-    button {
-        width: 100%;
-    }
-}
-
-/* Alarm and System Control Buttons */
-.submitBTN {
-    display: inline-block;
-    background-color: #14b8a6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    margin: 5px;
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.25s ease,
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-}
-
-/* ON buttons: turn green when hovered */
-.submitBTN.on-btn:hover {
-    background-color: #16a34a;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 14px rgba(22, 163, 74, 0.25);
-}
-
-/* OFF buttons: turn red when hovered */
-.submitBTN.off-btn:hover {
-    background-color: #dc2626;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 14px rgba(220, 38, 38, 0.25);
-}
-
-/* Keyboard accessibility */
-.submitBTN:focus-visible {
+:focus-visible {
     outline: 3px solid #f59e0b;
     outline-offset: 3px;
 }
 
-/* Responsive layout */
-@media (max-width: 480px) {
-    .submitBTN {
-        width: 100%;
-        margin: 5px 0;
+@media (max-width: 575.98px) {
+    .content-card { padding: 20px 18px; }
+    .site-header h1 { letter-spacing: 0; }
+    .navbar .nav-link { margin: 2px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
 
-/* 12. Reduced Motion Accessibility */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
+
+/* Responsive navbar logo */
+.logo-img {
+    width: clamp(80px, 8.33vw, 160px);
+    height: auto;
+    object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+    .logo-img {
+        width: 120px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+    .logo-img {
+        width: 80px;
     }
 }

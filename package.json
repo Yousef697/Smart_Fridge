@@ -1,13 +1,18 @@
 {
-  "name": "iot-project",
+  "name": "smart-fridge-iot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Smart Fridge IoT project website using Bootstrap 5.3.8",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "lite-server"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["iot", "smart-fridge", "bootstrap"],
+  "author": "Smart Fridge Project Team",
   "license": "ISC",
-  "type": "commonjs"
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "5.3.8"
+  }
 }
