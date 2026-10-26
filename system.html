@@ -92,16 +92,22 @@
                     <h2>Alarm Control</h2>
 
                     <fieldset class="control-panel mb-4">
+                        <legend>Access</legend>
+                        <button class="btn btn-primary me-2 mb-2" onclick="Puzzle()">Access IoT Device</button>
+                    </fieldset>
+
+                    <fieldset class="control-panel mb-4">
                         <legend>Alarm Command</legend>
+                        <button type="button" class="btn btn-success me-2 mb-2" id="alarmOnButton">Turn Alarm ON</button>
                         <button type="button" class="btn btn-danger me-2 mb-2" id="alarmOffButton">Turn Alarm OFF</button>
-                        <span id="alarmDemoStatus" class="small text-secondary" role="status" aria-live="polite">status: ON</span>
+                        <span id="alarmDemoStatus" class="small text-secondary" role="status" aria-live="polite">Status: ON</span>
                     </fieldset>
 
                     <fieldset class="control-panel">
                         <legend>Control the System</legend>
                         <button type="button" class="btn btn-success me-2 mb-2" id="systemOnButton">Turn the System ON</button>
-                        <button type="button" class="btn btn-danger mb-2" id="systemOffButton">Turn the System OFF</button>
-                        <p id="systemDemoStatus" class="small text-secondary mt-2 mb-0" role="status" aria-live="polite">status: ON</p>
+                        <button type="button" class="btn btn-danger me-2 mb-2" id="systemOffButton">Turn the System OFF</button>
+                        <span id="systemDemoStatus" class="small text-secondary" role="status" aria-live="polite">Status: ON</span>
                     </fieldset>
                 </section>
             </div>
@@ -112,24 +118,30 @@
         <div class="container"><p class="mb-0">Smart Fridge Project, Copyrights Reserved &copy;</p></div>
     </footer>
 
+    <script src="js/script.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Demonstration-only UI behavior; this does not send commands to hardware.
         const alarmOffButton = document.getElementById("alarmOffButton");
+        const alarmOnButton = document.getElementById("alarmOnButton");
         const alarmDemoStatus = document.getElementById("alarmDemoStatus");
         const systemDemoStatus = document.getElementById("systemDemoStatus");
 
         alarmOffButton.addEventListener("click", function () {
-            alarmDemoStatus.textContent = "Status: OFF (display only)";
-            alarmOffButton.disabled = true;
+            alarmDemoStatus.textContent = "Status: OFF";
+            // alarmOffButton.disabled = true;
+        });
+
+        alarmOnButton.addEventListener("click", function () {
+            alarmDemoStatus.textContent = "Status: ON";
+            // alarmOnButton.disabled = true;
         });
 
         document.getElementById("systemOnButton").addEventListener("click", function () {
-            systemDemoStatus.textContent = "Status: ON (display only)";
+            systemDemoStatus.textContent = "Status: ON";
         });
 
         document.getElementById("systemOffButton").addEventListener("click", function () {
-            systemDemoStatus.textContent = "Status: OFF (display only)";
+            systemDemoStatus.textContent = "Status: OFF";
         });
     </script>
 </body>
