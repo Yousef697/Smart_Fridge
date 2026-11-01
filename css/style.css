@@ -110,6 +110,22 @@ body {
     font-weight: 700;
 }
 
+.alarm-panel {
+    border: 1px solid var(--fridge-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    background: #f8fafc;
+}
+
+.alarm-panel legend {
+    float: none;
+    width: auto;
+    padding: 0 .5rem;
+    color: var(--fridge-primary);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 .btn { font-weight: 600; }
 .btn-success { --bs-btn-bg: #15803d; --bs-btn-border-color: #15803d; }
 .btn-danger { --bs-btn-bg: #dc2626; --bs-btn-border-color: #dc2626; }
